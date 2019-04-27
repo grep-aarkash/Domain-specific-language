@@ -21,3 +21,5 @@ with open(sys.argv[1], 'r') as file:
 		
 		mod = importlib.import_module(parts[0])
 		print(mod)
+		
+		getattr(mod, parts[1])(parts[2], parts[3])
