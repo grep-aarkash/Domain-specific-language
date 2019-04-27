@@ -2,11 +2,14 @@
 
 #!/usr/bin/env python 3
 import sys
+import importlib
 
 #The source file is the first argument to the script
 if len(sys.argv) != 2:
 	print('usage: %s <src.dsl>' % sys.argv[0])
 	sys.exit(1)
+
+sys.path.insert(0, '/Users/art/Documents/Domain-specific-language/modules')
 
 with open(sys.argv[1], 'r') as file:
 	for line in file:
@@ -15,3 +18,6 @@ with open(sys.argv[1], 'r') as file:
 			continue
 		parts = line.split()
 		print(parts)
+		
+		mod = importlib.import_module(parts[0])
+		print(mod)
