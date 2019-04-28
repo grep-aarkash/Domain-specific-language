@@ -23,3 +23,4 @@ with open(sys.argv[1], 'r') as file:
 		print(mod)
 		
 		getattr(mod, parts[1])(parts[2], parts[3])
+
